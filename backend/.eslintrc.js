@@ -19,6 +19,7 @@ module.exports = {
   },
   plugins: ['@typescript-eslint', 'prettier'],
   settings: {
+    experimentalDecorators: true,
     'import/resolver': {
       node: {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
@@ -26,6 +27,13 @@ module.exports = {
     },
   },
   rules: {
+    'arrow-parens': [2, 'as-needed'],
+    'import/prefer-default-export': 'off',
+    'prettier/prettier': 'error',
+    'class-methods-use-this': 'off',
+    'no-param-reassign': 'off',
+    camelcase: 'off',
+    'no-unused-vars': ['error', { argsIgnorePattern: 'next' }],
     'import/extensions': [
       'error',
       'ignorePackages',
