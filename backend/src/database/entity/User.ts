@@ -4,7 +4,6 @@ import {
   Column,
   CreateDateColumn,
   UpdateDateColumn,
-  BeforeInsert,
 } from 'typeorm';
 
 import bcrypt from 'bcryptjs';
@@ -17,22 +16,14 @@ export class User {
   @Column()
   name!: string;
 
+  @Column({ nullable: true })
+  jwtToken!: string;
+
   @Column({ unique: true })
   email!: string;
 
   @Column()
   passwordHash!: string;
-
-  password!: string;
-
-  @BeforeInsert()
-  async encryptPassword(): Promise<this> {
-    if (this.password) {
-      this.passwordHash = await bcrypt.hash(this.password, 8);
-      this.password = '';
-    }
-    return this;
-  }
 
   @CreateDateColumn({
     type: 'timestamp',
@@ -46,4 +37,14 @@ export class User {
     onUpdate: 'CURRENT_TIMESTAMP(6)',
   })
   updatedAt!: Date;
+
+  async hashPassword(password: string): Promise<void> {
+    if (password) {
+      this.passwordHash = await bcrypt.hash(password, 8);
+    }
+  }
+
+  checkPassword(password: string): Promise<boolean> {
+    return bcrypt.compare(password, this.passwordHash);
+  }
 }
