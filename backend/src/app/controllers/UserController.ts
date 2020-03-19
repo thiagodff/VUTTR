@@ -22,7 +22,7 @@ export async function store(req: Request, res: Response): Promise<object> {
 
   const createUser = await user.create({
     name,
-    email,
+    email
   });
 
   await createUser.hashPassword(password);
@@ -35,14 +35,38 @@ export async function store(req: Request, res: Response): Promise<object> {
 export async function update(req: Request, res: Response): Promise<object> {
   const user = await getConnection().getRepository(User);
 
-  const { email } = req.body;
+  // eslint-disable-next-line object-curly-newline
+  const { email, oldPassword, password, confirmPassword, name } = req.body;
 
-  const updateUser = user.find({ where: { email } });
+  const updateUser = await user.findOneOrFail({ where: { id: req.userId } });
 
-  if (updateUser) {
+  if (email !== updateUser.email) {
+    const userExists = await user.findOne({ where: { email } });
+
+    if (userExists) {
+      return res.status(400).json({ error: 'User already exists.' });
+    }
+    updateUser.email = email;
+  }
+
+  if (password !== confirmPassword) {
     return res
       .status(401)
-      .json({ error: { message: 'Usuário não encontrado' } });
+      .json({ error: 'Password and confirm password does not match.' });
   }
-  return res.json(user);
+
+  if (oldPassword && password) {
+    if (!(await updateUser.checkPassword(oldPassword))) {
+      return res.status(401).json({ error: 'Password does not match.' });
+    }
+    await updateUser.hashPassword(password);
+  }
+
+  if (name) {
+    updateUser.name = name;
+  }
+
+  await user.save(updateUser);
+
+  return res.json(updateUser);
 }

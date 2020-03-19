@@ -3,7 +3,7 @@ import {
   PrimaryGeneratedColumn,
   Column,
   CreateDateColumn,
-  UpdateDateColumn,
+  UpdateDateColumn
 } from 'typeorm';
 
 import bcrypt from 'bcryptjs';
@@ -16,9 +16,6 @@ export class User {
   @Column()
   name!: string;
 
-  @Column({ nullable: true })
-  jwtToken!: string;
-
   @Column({ unique: true })
   email!: string;
 
@@ -27,14 +24,14 @@ export class User {
 
   @CreateDateColumn({
     type: 'timestamp',
-    default: () => 'CURRENT_TIMESTAMP(6)',
+    default: () => 'CURRENT_TIMESTAMP(6)'
   })
   createdAt!: Date;
 
   @UpdateDateColumn({
     type: 'timestamp',
     default: () => 'CURRENT_TIMESTAMP(6)',
-    onUpdate: 'CURRENT_TIMESTAMP(6)',
+    onUpdate: 'CURRENT_TIMESTAMP(6)'
   })
   updatedAt!: Date;
 

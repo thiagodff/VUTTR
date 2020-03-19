@@ -1,32 +1,33 @@
 module.exports = {
   env: {
     es6: true,
-    node: true,
+    node: true
   },
   extends: [
     'airbnb-base',
     'plugin:@typescript-eslint/recommended',
-    'prettier/@typescript-eslint',
+    'prettier/@typescript-eslint'
   ],
   globals: {
     Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly',
+    SharedArrayBuffer: 'readonly'
   },
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2018,
-    sourceType: 'module',
+    sourceType: 'module'
   },
   plugins: ['@typescript-eslint', 'prettier'],
   settings: {
     experimentalDecorators: true,
     'import/resolver': {
       node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
-      },
-    },
+        extensions: ['.js', '.jsx', '.ts', '.tsx']
+      }
+    }
   },
   rules: {
+    'comma-dangle': ['error', 'never'],
     'arrow-parens': [2, 'as-needed'],
     'import/prefer-default-export': 'off',
     'prettier/prettier': 'error',
@@ -42,8 +43,8 @@ module.exports = {
         mjs: 'never',
         jsx: 'never',
         ts: 'never',
-        tsx: 'never',
-      },
-    ],
-  },
+        tsx: 'never'
+      }
+    ]
+  }
 };
