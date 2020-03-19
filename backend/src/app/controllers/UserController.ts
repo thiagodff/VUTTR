@@ -70,3 +70,13 @@ export async function update(req: Request, res: Response): Promise<object> {
 
   return res.json(updateUser);
 }
+
+export async function remove(req: Request, res: Response): Promise<object> {
+  const users = await getConnection().getRepository(User);
+
+  const user = await users.findOneOrFail({ where: { id: req.params.id } });
+
+  await users.remove(user);
+
+  return res.json(user);
+}
