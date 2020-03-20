@@ -73,6 +73,14 @@ export default {
 
     await repoTags.save(newTags);
 
-    return res.json(saveTools);
+    const { id } = saveTools;
+
+    return res.json({
+      id,
+      title,
+      link,
+      description,
+      tags
+    });
   }
 };
