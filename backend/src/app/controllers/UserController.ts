@@ -16,7 +16,7 @@ export async function store(req: Request, res: Response): Promise<object> {
 
   const { name, email, password } = req.body;
 
-  if (user.find({ where: { email } })) {
+  if (await user.findOne({ where: { email } })) {
     return res.status(401).json({ error: { message: 'E-mail já cadastrado' } });
   }
 
