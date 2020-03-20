@@ -20,7 +20,7 @@ export class User {
   email!: string;
 
   @Column()
-  passwordHash!: string;
+  private passwordHash!: string;
 
   @CreateDateColumn({
     type: 'timestamp',
