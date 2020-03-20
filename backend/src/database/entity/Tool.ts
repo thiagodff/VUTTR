@@ -11,7 +11,7 @@ import {
 import { User } from './User';
 
 @Entity('tools')
-export class Toll {
+export class Tool {
   @PrimaryGeneratedColumn()
   id!: number;
 

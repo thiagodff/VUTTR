@@ -6,7 +6,7 @@ import {
   JoinColumn
 } from 'typeorm';
 
-import { Toll } from './Toll';
+import { Tool } from './Tool';
 
 @Entity('tags')
 export class Tag {
@@ -16,7 +16,7 @@ export class Tag {
   @Column()
   name!: string;
 
-  @ManyToOne(() => Toll)
+  @ManyToOne(() => Tool, { onDelete: 'CASCADE' })
   @JoinColumn()
-  toll!: Toll;
+  tool!: Tool;
 }

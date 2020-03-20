@@ -17,7 +17,10 @@ routes.get('/users', UserController.index);
 routes.put('/users', UserController.update);
 routes.delete('/users/:id', UserController.remove);
 
-routes.get('/tools', ToolController.index);
+routes.get('/list', ToolController.index);
+
+routes.get('/tools', ToolController.show);
 routes.post('/tools', ToolController.store);
+routes.delete('/tools/:id', ToolController.remove);
 
 export default routes;
