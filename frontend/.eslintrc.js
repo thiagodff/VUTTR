@@ -34,6 +34,7 @@ module.exports = {
     // 'react',
   ],
   rules: {
+    'react/jsx-props-no-spreading': 'off',
     'prettier/prettier': 'error',
     'class-methods-use-this': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
