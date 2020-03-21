@@ -34,6 +34,7 @@ module.exports = {
     // 'react',
   ],
   rules: {
+    'no-console': ['error', { allow: ['tron'] }],
     'react/jsx-props-no-spreading': 'off',
     'prettier/prettier': 'error',
     'class-methods-use-this': 'off',
