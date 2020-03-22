@@ -1,29 +1,16 @@
 import produce from 'immer';
 
-interface Tool {
-  id: number;
-  title: string;
-  link: string;
-  description: string;
-  tags: string[];
-}
+import { StateRedux, Action } from '../../../interface';
 
 const INITIAL_STATE = {
   tools: null,
   loading: false,
 };
 
-interface State {
-  tools: Tool[] | null;
-  loading: boolean;
-}
-
-interface Action {
-  type: string;
-  payload: Tool[];
-}
-
-export default function tools(state: State = INITIAL_STATE, action: Action) {
+export default function tools(
+  state: StateRedux = INITIAL_STATE,
+  action: Action,
+) {
   return produce(state, draft => {
     switch (action.type) {
       case '@tools/TOOLS_REQUEST': {

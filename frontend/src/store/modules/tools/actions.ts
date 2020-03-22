@@ -1,10 +1,4 @@
-interface Tool {
-  id: number;
-  title: string;
-  link: string;
-  description: string;
-  tags: string[];
-}
+import { Tool } from '../../../interface';
 
 export function toolsRequest() {
   return {

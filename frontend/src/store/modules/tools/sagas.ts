@@ -5,18 +5,6 @@ import api from '../../../services/api';
 
 import { toolsSuccess, toolsFailure } from './actions';
 
-interface Tools {
-  id: number;
-  title: string;
-  link: string;
-  description: string;
-  tags: string[];
-}
-
-interface Payload {
-  payload: Tools;
-}
-
 export function* createToll() {
   try {
     const response = yield call(api.get, '/tools');
