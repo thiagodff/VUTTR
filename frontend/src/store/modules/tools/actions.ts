@@ -1,8 +1,9 @@
 import { Tool } from '../../../interface';
 
-export function toolsRequest() {
+export function toolsRequest(search: string, name?: string) {
   return {
     type: '@tools/TOOLS_REQUEST',
+    payload: { search, name },
   };
 }
 

@@ -5,12 +5,40 @@ import api from '../../../services/api';
 
 import { toolsSuccess, toolsFailure } from './actions';
 
-export function* createToll() {
-  try {
-    const response = yield call(api.get, '/tools');
-    console.tron.log(response.data);
+interface Payload {
+  search: string;
+  name?: string;
+}
 
-    yield put(toolsSuccess(response.data));
+interface Action {
+  type: string;
+  payload: Payload;
+}
+
+export function* createToll({ payload }: Action) {
+  try {
+    const { search, name } = payload;
+
+    switch (search) {
+      case 'q': {
+        const response = yield call(api.get, `/tools?q=${name}`);
+        console.tron.log(`/tools?q=:${name}`);
+        yield put(toolsSuccess(response.data));
+        break;
+      }
+      case 'tags': {
+        const response = yield call(api.get, `/tools?tags_like=${name}`);
+        console.tron.log(`/tools?tags_like=:${name}`);
+        yield put(toolsSuccess(response.data));
+        break;
+      }
+      default: {
+        const response = yield call(api.get, '/tools');
+        console.tron.log(`/tools`);
+        yield put(toolsSuccess(response.data));
+        break;
+      }
+    }
   } catch (error) {
     toast.error('Falha ao buscar ferramentas');
     yield put(toolsFailure());
