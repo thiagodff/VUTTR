@@ -6,7 +6,9 @@ interface Props {
 }
 
 export const Container = styled.div`
-  height: 100%;
+  display: flex;
+  flex: 1;
+  min-height: 100%;
   background: #ffdda1;
   font-family: 'Source Sans Pro';
   color: #170c3a;
@@ -15,12 +17,10 @@ export const Container = styled.div`
 export const Content = styled.div`
   width: 600px;
   flex-direction: column;
-  margin: auto;
+  margin: 60px auto 0;
 `;
 
 export const Header = styled.div`
-  padding-top: 60px;
-
   h1 {
     font-size: 42px;
   }

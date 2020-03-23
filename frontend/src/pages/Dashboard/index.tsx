@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { MdSearch, MdAdd } from 'react-icons/md';
 import { useDispatch, useSelector } from 'react-redux';
 
+import AddNewTool from '../../components/AddNewTool';
 import RenderTool from '../../components/RenderTool';
 import { State } from '../../interface';
 import { toolsRequest } from '../../store/modules/tools/actions';
@@ -23,6 +24,7 @@ export default function Dashboard() {
 
   const [searchText, setSearchText] = useState('');
   const [checked, setChecked] = useState(false);
+  const [addTool, setAddTool] = useState(false);
 
   useEffect(() => {
     dispatch(toolsRequest(''));
@@ -43,6 +45,7 @@ export default function Dashboard() {
 
   return (
     <Container>
+      {addTool && <AddNewTool handleClick={() => setAddTool(!addTool)} />}
       <Content>
         <Header>
           <h1>VUTTR</h1>
@@ -74,7 +77,7 @@ export default function Dashboard() {
             </label>
           </Form>
 
-          <AddTool type="button">
+          <AddTool type="button" onClick={() => setAddTool(!addTool)}>
             <MdAdd size={20} />
             <p>Add</p>
           </AddTool>
