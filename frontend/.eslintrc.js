@@ -34,6 +34,8 @@ module.exports = {
     // 'react',
   ],
   rules: {
+    'react/jsx-one-expression-per-line': 'off',
+    'jsx-a11y/label-has-associated-control': 'off',
     'no-console': ['error', { allow: ['tron'] }],
     'react/jsx-props-no-spreading': 'off',
     'prettier/prettier': 'error',
