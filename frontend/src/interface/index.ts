@@ -4,6 +4,7 @@ export interface Tool {
   link: string;
   description: string;
   tags: string[];
+  handleRemoveClick: Function;
 }
 
 export interface Tools {

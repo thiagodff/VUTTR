@@ -18,11 +18,10 @@ const AddNewTool: React.FC<Props> = ({ handleClick }) => {
   const [link, setLink] = useState('');
   const [description, setDescription] = useState('');
   const [tagInput, setTagInput] = useState('');
-  const [tags, setTags] = useState<string[]>([]);
 
   async function handleAddNewTool(e: any) {
     e.preventDefault();
-    setTags(tagInput.split(' '));
+    const tags = tagInput.split(' ');
 
     await api.post(`/tools`, {
       title,

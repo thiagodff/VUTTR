@@ -3,6 +3,7 @@ import { MdSearch, MdAdd } from 'react-icons/md';
 import { useDispatch, useSelector } from 'react-redux';
 
 import AddNewTool from '../../components/AddNewTool';
+import ConfirmRemove from '../../components/ConfirmRemove';
 import RenderTool from '../../components/RenderTool';
 import { State } from '../../interface';
 import { toolsRequest } from '../../store/modules/tools/actions';
@@ -25,6 +26,9 @@ export default function Dashboard() {
   const [searchText, setSearchText] = useState('');
   const [checked, setChecked] = useState(false);
   const [addTool, setAddTool] = useState(false);
+  const [removeTool, setRemoveTool] = useState(false);
+  const [removeId, setRemoveId] = useState<number>();
+  const [titleRemove, setTitleRemove] = useState('');
 
   useEffect(() => {
     dispatch(toolsRequest(''));
@@ -45,6 +49,13 @@ export default function Dashboard() {
 
   return (
     <Container>
+      {removeTool && (
+        <ConfirmRemove
+          id={removeId}
+          title={titleRemove}
+          handleClick={() => setRemoveTool(!removeTool)}
+        />
+      )}
       {addTool && <AddNewTool handleClick={() => setAddTool(!addTool)} />}
       <Content>
         <Header>
@@ -92,6 +103,11 @@ export default function Dashboard() {
               link={tool.link}
               description={tool.description}
               tags={tool.tags}
+              handleRemoveClick={(numberId: number, title: string) => {
+                setRemoveId(numberId);
+                setRemoveTool(!removeTool);
+                setTitleRemove(title);
+              }}
             />
           ))}
         </ToolsWrapper>
