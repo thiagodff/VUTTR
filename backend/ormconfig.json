@@ -1,10 +1,36 @@
-{
-  "entities": ["src/database/entity/**/*.ts"],
-  "migrations": ["src/database/migration/**/*.ts"],
-  "subscribers": ["src/database/subscriber/**/*.ts"],
-  "cli": {
-    "entitiesDir": "src/database/entity",
-    "migrationsDir": "src/database/migration",
-    "subscribersDir": "src/database/subscriber"
+[
+  {
+    "name": "development",
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "username": "postgres",
+    "password": "docker",
+    "database": "vuttr",
+    "entities": ["src/database/entity/**/*.ts"],
+    "migrations": ["src/database/migration/**/*.ts"],
+    "subscribers": ["src/database/subscriber/**/*.ts"],
+    "cli": {
+      "entitiesDir": "src/database/entity",
+      "migrationsDir": "src/database/migration",
+      "subscribersDir": "src/database/subscriber"
+    }
+  },
+  {
+    "name": "test",
+    "type": "sqlite",
+    "database": "__tests__/database.sqlite",
+    "synchronize": true,
+    "logging": false,
+    "schema": "sync",
+    "dropSchema": true,
+    "entities": ["src/database/entity_tests/**/*.ts"],
+    "migrations": ["src/database/migration/**/*.ts"],
+    "subscribers": ["src/database/subscriber/**/*.ts"],
+    "cli": {
+      "entitiesDir": "src/database/entity_tests",
+      "migrationsDir": "src/database/migration",
+      "subscribersDir": "src/database/subscriber"
+    }
   }
-}
+]
