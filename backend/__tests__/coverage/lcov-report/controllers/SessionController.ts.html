@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">29.41% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/18</span>
+                <span class='fraction'>5/17</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>0/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>0/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">35.71% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/15</span>
+                <span class='fraction'>5/14</span>
             </div>
         
             
@@ -92,30 +92,30 @@
 <a name='L33'></a><a href='#L33'>33</a>
 <a name='L34'></a><a href='#L34'>34</a>
 <a name='L35'></a><a href='#L35'>35</a>
-<a name='L36'></a><a href='#L36'>36</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L36'></a><a href='#L36'>36</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -127,30 +127,30 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Requ<span class="cstat-no" title="statement not covered" >est, Response } from 'express';<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span></span>
-import { getCon<span class="cstat-no" title="statement not covered" >nection } from 'typ</span>eorm';
-import jwt from 'jso<span class="cstat-no" title="statement not covered" >nwebtoken';<span class="cstat-no" title="statement not covered" ></span></span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Request, Response } from 'express';
+import { getConnection } from 'typeorm';
+import jwt from 'jsonwebtoken';
 &nbsp;
-import authC<span class="cstat-no" title="statement not covered" >onfig from '../../config/auth</span>';<span class="cstat-no" title="statement not covered" ></span>
+import authConfig from '../../config/auth';
 &nbsp;
-import { Use<span class="cstat-no" title="statement not covered" >r } from '../../database/entity/User';</span>
+import { User } from '../../database/entity/User';
 &nbsp;
-<span class="cstat-no" title="statement not covered" >export default {</span>
-<span class="fstat-no" title="function not covered" >  as</span>ync store(req: Request, res: Response): Promise&lt;Response&gt; {
-    const users = <span class="cstat-no" title="statement not covered" >await getConnection().getRepository(User);</span>
-    const { email, password } = <span class="cstat-no" title="statement not covered" >req.body;</span>
+export default {
+<span class="fstat-no" title="function not covered" >  async s</span>tore(req: Request, res: Response): Promise&lt;Response&gt; {
+    const <span class="cstat-no" title="statement not covered" >users = <span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" >await getConnection().getRepository(User);</span></span></span>
+    const <span class="cstat-no" title="statement not covered" >{ email, password } = r</span>eq.body;
 &nbsp;
-    const findUser = <span class="cstat-no" title="statement not covered" >await users.findOneOrFail({ where: { email } });</span>
+    const <span class="cstat-no" title="statement not covered" >findUser = <span class="cstat-no" title="statement not covered" >await users.findOneOrFail({ where: { email } });</span></span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    if (!findUser) {</span>
 <span class="cstat-no" title="statement not covered" >      return res.status(401).json({ error: 'User not found' });</span>
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    if (!(await findUser.checkPassword(password))) {</span>
+<span class="cstat-no" title="statement not covered" >    if (!(<span class="cstat-no" title="statement not covered" >await findUser.checkPassword(password)))</span> {</span>
 <span class="cstat-no" title="statement not covered" >      return res.status(401).json({ error: 'Password incorrect' });</span>
     }
 &nbsp;
-    const { id, name } = <span class="cstat-no" title="statement not covered" >findUser;</span>
+    const { <span class="cstat-no" title="statement not covered" >id, name } = f</span>indUser;
 &nbsp;
 <span class="cstat-no" title="statement not covered" >    return res.json({</span>
       id,
@@ -169,7 +169,7 @@ import { Use<span class="cstat-no" title="statement not covered" >r } from '../.
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Sat Mar 28 2020 21:52:40 GMT-0300 (GMT-03:00)
+                at Sun Mar 29 2020 16:42:46 GMT-0300 (GMT-03:00)
             </div>
         </div>
         <script src="../prettify.js"></script>

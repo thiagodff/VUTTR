@@ -1,15 +1,8 @@
 import 'reflect-metadata';
-import { createConnection, getConnectionOptions } from 'typeorm';
+import { createTypeormConn } from '../config/database';
 
 export const startServer = async () => {
-  const connectionOptions = await getConnectionOptions(process.env.NODE_ENV);
-
-  return (
-    createConnection({ ...connectionOptions, name: 'default' })
-      .then()
-      // eslint-disable-next-line no-console
-      .catch(error => console.log(error))
-  );
+  await createTypeormConn();
 };
 
 startServer();

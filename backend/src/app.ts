@@ -1,9 +1,9 @@
-import 'reflect-metadata';
-
 import './bootstrap';
 
 import express from 'express';
 import cors from 'cors';
+
+import 'reflect-metadata';
 
 import './database';
 

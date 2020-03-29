@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">28.57% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/18</span>
+                <span class='fraction'>4/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>0/2</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">30.77% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/15</span>
+                <span class='fraction'>4/13</span>
             </div>
         
             
@@ -97,13 +97,11 @@
 <a name='L38'></a><a href='#L38'>38</a>
 <a name='L39'></a><a href='#L39'>39</a>
 <a name='L40'></a><a href='#L40'>40</a>
-<a name='L41'></a><a href='#L41'>41</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L41'></a><a href='#L41'>41</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -111,23 +109,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -135,13 +119,29 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Requ<span class="cstat-no" title="statement not covered" >est, Response, NextFunction } from 'express';<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span></span>
-import jwt from 'jso<span class="cstat-no" title="statement not covered" >nwebtoken';<span class="cstat-no" title="statement not covered" ></span></span>
-import { pro<span class="cstat-no" title="statement not covered" >misify } from 'u</span>til';
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { Request, Response, NextFunction } from 'express';
+import jwt from 'jsonwebtoken';
+import { promisify } from 'util';
 &nbsp;
-import authC<span class="cstat-no" title="statement not covered" >onfig from '../../config/auth</span>';<span class="cstat-no" title="statement not covered" ></span>
+import authConfig from '../../config/auth';
 &nbsp;
 interface RequestWithUser extends Request {
   userId: number;
@@ -151,21 +151,21 @@ interface Decoded {
   id: number;
 }
 &nbsp;
-export const authMiddlew<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >ar</span>e = async (</span>
+export const authMiddleware = <span class="fstat-no" title="function not covered" >async (</span>
   req: Request,
   res: Response,
-  next: NextFunction
+  next: NextFunction<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span>
 ): Promise&lt;Response | void&gt; =&gt; {
-  const authHeader = <span class="cstat-no" title="statement not covered" >req.headers.authorization </span>as string;
+  const <span class="cstat-no" title="statement not covered" >authHeader = req.headers.authorization as string;</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  if (!authHeader) {</span>
 <span class="cstat-no" title="statement not covered" >    return res.send(401).json({ error: 'Token not provided' });</span>
   }
 &nbsp;
-  const [, token] = <span class="cstat-no" title="statement not covered" >authHeader.split(' ');</span>
+  const <span class="cstat-no" title="statement not covered" >[, token] = a</span>uthHeader.split(' ');
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  try {</span>
-    const decoded: De<span class="cstat-no" title="statement not covered" >coded = (await promisify(jwt.verify)(</span>
+  try {
+    const <span class="cstat-no" title="statement not covered" >decoded: Decoded = (<span class="cstat-no" title="statement not covered" >await promisify(jwt.verify)(</span></span>
       token,
       authConfig.secret
     )) as Decoded;
@@ -176,7 +176,7 @@ export const authMiddlew<span class="cstat-no" title="statement not covered" ><s
   } catch (error) {
 <span class="cstat-no" title="statement not covered" >    return res.status(401).json({ error: 'Token invalid' });</span>
   }
-};<span class="cstat-no" title="statement not covered" ></span>
+};
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -184,7 +184,7 @@ export const authMiddlew<span class="cstat-no" title="statement not covered" ><s
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Sat Mar 28 2020 21:52:40 GMT-0300 (GMT-03:00)
+                at Sun Mar 29 2020 16:42:46 GMT-0300 (GMT-03:00)
             </div>
         </div>
         <script src="../prettify.js"></script>

@@ -22,13 +22,12 @@
     "database": "__tests__/database.sqlite",
     "synchronize": true,
     "logging": false,
-    "schema": "sync",
     "dropSchema": true,
-    "entities": ["src/database/entity_tests/**/*.ts"],
+    "entities": ["src/database/entity/**/*.ts"],
     "migrations": ["src/database/migration/**/*.ts"],
     "subscribers": ["src/database/subscriber/**/*.ts"],
     "cli": {
-      "entitiesDir": "src/database/entity_tests",
+      "entitiesDir": "src/database/entity",
       "migrationsDir": "src/database/migration",
       "subscribersDir": "src/database/subscriber"
     }
