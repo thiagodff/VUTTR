@@ -3,13 +3,14 @@ import {
   PrimaryGeneratedColumn,
   Column,
   ManyToOne,
-  JoinColumn
+  JoinColumn,
+  BaseEntity
 } from 'typeorm';
 
 import { Tool } from './Tool';
 
 @Entity('tags')
-export class Tag {
+export class Tag extends BaseEntity {
   @PrimaryGeneratedColumn()
   id!: number;
 

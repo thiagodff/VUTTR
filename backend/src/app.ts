@@ -5,8 +5,6 @@ import cors from 'cors';
 
 import 'reflect-metadata';
 
-import './database';
-
 import routes from './routes';
 
 class App {

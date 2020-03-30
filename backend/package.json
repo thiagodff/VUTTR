@@ -5,7 +5,6 @@
   "license": "MIT",
   "scripts": {
     "dev:server": "NODE_ENV=development ts-node-dev --respawn --transpileOnly src/server.ts --ignore-watch __tests__",
-    "pretest": "NODE_ENV=test ./node_modules/.bin/ts-node ./node_modules/.bin/typeorm schema:sync -c test",
     "test": "NODE_ENV=test jest"
   },
   "devDependencies": {

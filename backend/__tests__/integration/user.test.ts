@@ -1,10 +1,21 @@
-import 'reflect-metadata';
-
 import request from 'supertest';
 
 import app from '../../src/app';
 
+import {
+  createTypeormConn,
+  closeDatabaseConn
+} from '../../src/config/database';
+
 describe('User', () => {
+  beforeEach(async () => {
+    await createTypeormConn();
+  });
+
+  afterEach(async () => {
+    await closeDatabaseConn();
+  });
+
   it('should be able to register', async () => {
     const response = await request(app)
       .post('/users')

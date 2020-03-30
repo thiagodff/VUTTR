@@ -1,7 +1,8 @@
 import {
   Entity,
   PrimaryGeneratedColumn,
-  Column
+  Column,
+  BaseEntity
   // CreateDateColumn,
   // UpdateDateColumn
 } from 'typeorm';
@@ -9,7 +10,7 @@ import {
 import bcrypt from 'bcryptjs';
 
 @Entity('users')
-export class User {
+export class User extends BaseEntity {
   @PrimaryGeneratedColumn()
   id!: number;
 

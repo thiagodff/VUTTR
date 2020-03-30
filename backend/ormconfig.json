@@ -23,7 +23,7 @@
     "synchronize": true,
     "logging": false,
     "dropSchema": true,
-    "entities": ["src/database/entity/**/*.ts"],
+    "entities": ["src/database/entity/**/*{.ts,.js}"],
     "migrations": ["src/database/migration/**/*.ts"],
     "subscribers": ["src/database/subscriber/**/*.ts"],
     "cli": {
