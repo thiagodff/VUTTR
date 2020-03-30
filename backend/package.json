@@ -4,13 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev:server": "NODE_ENV=development ts-node-dev --respawn --transpileOnly src/server.ts --ignore-watch __tests__",
+    "dev": "NODE_ENV=development ts-node-dev --respawn --transpileOnly src/server.ts --ignore-watch __tests__",
     "test": "NODE_ENV=test jest"
   },
   "devDependencies": {
-    "@babel/core": "^7.9.0",
     "@babel/plugin-proposal-decorators": "^7.8.3",
-    "@babel/preset-env": "^7.9.0",
     "@babel/preset-typescript": "^7.9.0",
     "@sucrase/jest-plugin": "^2.0.0",
     "@types/cors": "^2.8.6",
@@ -20,7 +18,6 @@
     "@types/supertest": "^2.0.8",
     "@typescript-eslint/eslint-plugin": "^2.24.0",
     "@typescript-eslint/parser": "^2.24.0",
-    "babel-jest": "^25.2.3",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-config-prettier": "^6.10.0",

@@ -20,7 +20,7 @@ export const authMiddleware = async (
   const authHeader = req.headers.authorization as string;
 
   if (!authHeader) {
-    return res.send(401).json({ error: 'Token not provided' });
+    return res.status(401).json({ error: 'Token not provided' });
   }
 
   const [, token] = authHeader.split(' ');

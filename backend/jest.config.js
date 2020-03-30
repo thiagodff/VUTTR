@@ -1,8 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const { join } = require('path');
 
-require('./babel.config');
-
 module.exports = {
   // All imported modules in your tests should be mocked automatically
   // automock: false,
