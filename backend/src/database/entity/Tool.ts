@@ -2,8 +2,8 @@ import {
   Entity,
   PrimaryGeneratedColumn,
   Column,
-  // CreateDateColumn,
-  // UpdateDateColumn,
+  CreateDateColumn,
+  UpdateDateColumn,
   ManyToOne,
   JoinColumn,
   BaseEntity
@@ -26,21 +26,14 @@ export class Tool extends BaseEntity {
   description!: string;
 
   @ManyToOne(() => User, {
-    cascade: true
+    onDelete: 'CASCADE'
   })
   @JoinColumn()
   user!: User;
 
-  // @CreateDateColumn({
-  //   type: 'timestamp',
-  //   default: () => 'CURRENT_TIMESTAMP(6)'
-  // })
-  // createdAt!: Date;
+  @CreateDateColumn()
+  createdAt!: Date;
 
-  // @UpdateDateColumn({
-  //   type: 'timestamp',
-  //   default: () => 'CURRENT_TIMESTAMP(6)',
-  //   onUpdate: 'CURRENT_TIMESTAMP(6)'
-  // })
-  // updatedAt!: Date;
+  @UpdateDateColumn()
+  updatedAt!: Date;
 }

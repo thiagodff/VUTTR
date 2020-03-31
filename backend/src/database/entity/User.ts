@@ -2,9 +2,9 @@ import {
   Entity,
   PrimaryGeneratedColumn,
   Column,
-  BaseEntity
-  // CreateDateColumn,
-  // UpdateDateColumn
+  BaseEntity,
+  CreateDateColumn,
+  UpdateDateColumn
 } from 'typeorm';
 
 import bcrypt from 'bcryptjs';
@@ -23,18 +23,11 @@ export class User extends BaseEntity {
   @Column()
   private passwordHash!: string;
 
-  // @CreateDateColumn({
-  //   type: 'timestamp',
-  //   default: () => 'CURRENT_TIMESTAMP(6)'
-  // })
-  // createdAt!: Date;
+  @CreateDateColumn()
+  createdAt!: Date;
 
-  // @UpdateDateColumn({
-  //   type: 'timestamp',
-  //   default: () => 'CURRENT_TIMESTAMP(6)',
-  //   onUpdate: 'CURRENT_TIMESTAMP(6)'
-  // })
-  // updatedAt!: Date;
+  @UpdateDateColumn()
+  updatedAt!: Date;
 
   async hashPassword(password: string): Promise<void> {
     if (password) {
