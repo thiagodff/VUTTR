@@ -17,7 +17,7 @@ export async function store(req: Request, res: Response): Promise<object> {
   const { name, email, password } = req.body;
 
   if (await user.findOne({ where: { email } })) {
-    return res.status(401).json({ error: { message: 'E-mail já cadastrado' } });
+    return res.status(400).json({ error: { message: 'Duplicated e-mail' } });
   }
 
   const createUser = await user.create({
@@ -27,9 +27,9 @@ export async function store(req: Request, res: Response): Promise<object> {
 
   await createUser.hashPassword(password);
 
-  const saveUser = await user.save(createUser);
+  const { id } = await user.save(createUser);
 
-  return res.json(saveUser);
+  return res.json({ id, name, email });
 }
 
 export async function update(req: Request, res: Response): Promise<object> {

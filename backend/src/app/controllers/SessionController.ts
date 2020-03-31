@@ -11,7 +11,7 @@ export default {
     const users = await getConnection().getRepository(User);
     const { email, password } = req.body;
 
-    const findUser = await users.findOneOrFail({ where: { email } });
+    const findUser = await users.findOne({ where: { email } });
 
     if (!findUser) {
       return res.status(401).json({ error: 'User not found' });
