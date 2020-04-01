@@ -1,9 +1,7 @@
 import faker from 'faker';
 import request from 'supertest';
-// import { getConnection } from 'typeorm';
 
 import app from '../../src/app';
-// import { User } from '../../src/database/entity/User';
 
 import {
   createTypeormConn,
@@ -76,5 +74,66 @@ describe('Tool', () => {
       .set('Authorization', `bearer ${token}`);
 
     expect(response.status).toBe(401);
+  });
+
+  it('should be able to list tools', async () => {
+    await request(app)
+      .post('/tools')
+      .send({
+        title: faker.lorem.word(),
+        link: faker.internet.url(),
+        description: faker.lorem.sentence(),
+        tags: [faker.lorem.word()]
+      })
+      .set('Authorization', `bearer ${token}`);
+
+    const response = await request(app)
+      .get('/tools')
+      .set('Authorization', `bearer ${token}`);
+
+    expect(response.body[0]).toHaveProperty('id');
+  });
+
+  it('should be able to list tools with specific tag', async () => {
+    await request(app)
+      .post('/users')
+      .send({
+        name: 'otherUser',
+        email: 'otherEmail.test@gmail.com',
+        password: '123456'
+      });
+
+    const sessionOtherUser = await request(app)
+      .post('/sessions')
+      .send({
+        email: 'otherEmail.test@gmail.com',
+        password: '123456'
+      });
+
+    await request(app)
+      .post('/tools')
+      .send({
+        title: 'Other tool with same tag',
+        link: faker.internet.url(),
+        description: faker.lorem.sentence(),
+        tags: ['node', faker.lorem.word()]
+      })
+      .set('Authorization', `bearer ${sessionOtherUser.body.token}`);
+
+    const newTool = await request(app)
+      .post('/tools')
+      .send({
+        title: faker.lorem.word(),
+        link: faker.internet.url(),
+        description: faker.lorem.sentence(),
+        tags: ['node', faker.lorem.word()]
+      })
+      .set('Authorization', `bearer ${token}`);
+
+    const response = await request(app)
+      .get(`/tools?tag=${newTool.body.tags[0]}`)
+      .set('Authorization', `bearer ${token}`);
+
+    expect(response.body[0]).toHaveProperty('id');
   });
 });

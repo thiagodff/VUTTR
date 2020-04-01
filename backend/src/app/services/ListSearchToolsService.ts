@@ -18,10 +18,6 @@ class ListSearchTools {
       relations: ['tool']
     });
 
-    if (findTags.length === 0) {
-      return [{ message: 'No tag found' }];
-    }
-
     const findTools = findTags.map(findTag => findTag.tool);
 
     const formatTools = await Promise.all(
