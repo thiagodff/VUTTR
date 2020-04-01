@@ -2,14 +2,13 @@
   {
     "name": "development",
     "type": "postgres",
-    "host": "localhost",
     "port": 5432,
     "username": "postgres",
     "password": "docker",
     "database": "vuttr",
     "synchronize": true,
     "logging": false,
-    "entities": ["src/database/entity/**/*.ts"],
+    "entities": ["src/database/entity/**/*{.ts,.js}"],
     "migrations": ["src/database/migration/**/*.ts"],
     "subscribers": ["src/database/subscriber/**/*.ts"],
     "cli": {

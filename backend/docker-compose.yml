@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  vuttr-api:
+    container_name: vuttr-api
+    build: '.'
+    volumes:
+      - .:/home/node/api
+      - /home/node/api/node_modules
+    ports:
+      - '3000:3000'
+    depends_on:
+      - vuttr-database
+    environment:
+      - DB_HOST=vuttr-database
+    networks:
+      - vuttr-network
+
+  vuttr-database:
+    image: postgres
+    container_name: vuttr-database
+    environment:
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASS}
+    ports:
+      - '5432:5432'
+    networks:
+      - vuttr-network
+
+volumes:
+  postgres-vuttr-data:
+
+networks:
+  vuttr-network:
+    driver: bridge
