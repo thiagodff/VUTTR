@@ -1,5 +1,5 @@
 import 'reflect-metadata';
-import { createConnection, getConnectionOptions } from 'typeorm';
+import { createConnections } from 'typeorm';
 import { createTypeormConn } from '../config/database';
 
 export const startServer = async () => {
@@ -7,9 +7,7 @@ export const startServer = async () => {
 };
 
 export const startProductionServer = async () => {
-  const connectionOptions = await getConnectionOptions();
-
-  await createConnection({ ...connectionOptions, name: 'default' });
+  await createConnections();
 };
 
 if (process.env.NODE_ENV === 'production') {
