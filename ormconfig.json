@@ -1,24 +1,5 @@
 [
   {
-    "name": "production",
-    "type": "postgres",
-    "port": 5432,
-    "host": "ec2-34-193-232-231.compute-1.amazonaws.com",
-    "username": "llloujkycmvhlk",
-    "password": "e1db5a991394b3229155c18cfb7e5002cf51e0a220d2bbc1c4a30425ffb1b058",
-    "database": "dbgv7g67clbrti",
-    "synchronize": true,
-    "logging": false,
-    "entities": ["src/database/entity/**/*{.ts,.js}"],
-    "migrations": ["src/database/migration/**/*.ts"],
-    "subscribers": ["src/database/subscriber/**/*.ts"],
-    "cli": {
-      "entitiesDir": "src/database/entity",
-      "migrationsDir": "src/database/migration",
-      "subscribersDir": "src/database/subscriber"
-    }
-  },
-  {
     "name": "development",
     "type": "postgres",
     "port": 5432,
