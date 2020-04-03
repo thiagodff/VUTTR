@@ -1,3 +1,7 @@
-# VUTTR (Very Useful Tools to Remember)
+# Awesome Project Build with TypeORM
 
-A aplicação é um simples repositório para gerenciar ferramentas com seus respectivos nomes, links, descrições e tags.
+Steps to run this project:
+
+1. Run `npm i` command
+2. Setup database settings inside `ormconfig.json` file
+3. Run `npm start` command

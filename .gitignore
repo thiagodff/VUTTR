@@ -1,4 +1,7 @@
-backend/node_modules
-backend/.env
-backend/__tests__/coverage
-
+.idea/
+.vscode/
+node_modules/
+build/
+tmp/
+temp/
+__tests__/coverage
