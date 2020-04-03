@@ -2,7 +2,8 @@ import React from 'react';
 import { MdClose } from 'react-icons/md';
 import { useDispatch } from 'react-redux';
 
-import api from '../../services/api';
+// import api from '../../services/api';
+import { Tool } from '../../interface';
 import { toolsRequest } from '../../store/modules/tools/actions';
 
 import {
@@ -26,7 +27,18 @@ const ConfirmRemoveTool: React.FC<Props> = ({ handleClick, id, title }) => {
   async function handleConfirmRemoveTool(e: any) {
     e.preventDefault();
 
-    await api.delete(`/tools/${id}`);
+    // await api.delete(`/tools/${id}`);
+
+    const tools = localStorage.getItem('tools') as string;
+
+    const parseTools = JSON.parse(tools);
+
+    const toolRemoved = parseTools.filter(
+      (parseTool: Tool) => parseTool.id !== id,
+    );
+
+    localStorage.setItem('tools', JSON.stringify(toolRemoved));
+
     dispatch(toolsRequest(''));
     handleClick();
   }
