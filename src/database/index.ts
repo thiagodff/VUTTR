@@ -9,7 +9,7 @@ export const startServer = async () => {
 export const startProductionServer = async () => {
   const connectionOptions: ConnectionOptions = {} as ConnectionOptions;
 
-  await createConnection(connectionOptions);
+  await createConnection({ ...connectionOptions, name: 'default' });
 };
 
 if (process.env.NODE_ENV === 'production') {
