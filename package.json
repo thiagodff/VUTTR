@@ -6,9 +6,8 @@
   "author": "thiago-dornelles",
   "license": "MIT",
   "scripts": {
-    "dev": "NODE_ENV=development ts-node-dev --respawn --transpileOnly src/server.ts --ignore-watch __tests__",
-    "test": "NODE_ENV=test jest --runInBand",
-    "start": "docker-compose up"
+    "start": "NODE_ENV=production ts-node-dev --respawn --transpileOnly src/server.ts --ignore-watch __tests__",
+    "test": "NODE_ENV=test jest --runInBand"
   },
   "devDependencies": {
     "@sucrase/jest-plugin": "^2.0.0",
