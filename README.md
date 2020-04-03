@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/be26bc29-9531-4106-b9ad-1dd2f41fd456/deploy-status)](https://app.netlify.com/sites/vuttr-bossabox/deploys)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
