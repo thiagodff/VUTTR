@@ -1,11 +1,14 @@
 {
-  "name": "backend",
+  "name": "vuttr",
   "version": "1.0.0",
+  "description": "Bossabox challenge VUTTR.",
   "main": "index.js",
+  "author": "thiago-dornelles",
   "license": "MIT",
   "scripts": {
     "dev": "NODE_ENV=development ts-node-dev --respawn --transpileOnly src/server.ts --ignore-watch __tests__",
-    "test": "NODE_ENV=test jest --runInBand"
+    "test": "NODE_ENV=test jest --runInBand",
+    "start": "docker-compose up"
   },
   "devDependencies": {
     "@sucrase/jest-plugin": "^2.0.0",
@@ -44,5 +47,13 @@
     "pg": "^7.18.2",
     "reflect-metadata": "^0.1.13",
     "typeorm": "^0.2.24"
+  },
+  "keywords": [
+    "bossabox",
+    "vuttr",
+    "heroku"
+  ],
+  "engines": {
+    "node": "12.x"
   }
 }
