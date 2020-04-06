@@ -5,4 +5,7 @@ build/
 tmp/
 temp/
 __tests__/coverage
+__tests__/database.sqlite
 vuttr-api-bossabox
+
+
