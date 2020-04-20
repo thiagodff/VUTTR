@@ -1,0 +1,202 @@
+FORMAT: 1A
+HOST: https://vuttr-api-bossabox.herokuapp.com
+
+# VUTTR challenge bossabox
+
+# Group Sessions
+
+## Sessions [/sessions]
+
+### Create [POST]
++ Request (application/json)
+
+    + Attributes (Session)
+
++ Response 200 (application/json)
+
+    + Attributes (SessionResponse)
+
++ Response 401 (application/json)
+
+    + Attributes (Error)
+
+# Group Users
+
+## User [/users]
+
+### List [GET]
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTg3MzUxNjc4LCJleHAiOjE1ODc5NTY0Nzh9.hD2vbgMNhMdci8ZdPEFzHm9g_xyUuwndGZpbWmSr568
+
++ Response 200 (application/json)
+
+    + Attributes (array[UserIndex])
+ 
++ Response 401 (application/json)
+
+    + Attributes (Error)
+    
+
+### Create [POST]
++ Request (application/json)
+    
+    + Attributes (User)
+
++ Response 200 (application/json)
+
+    + Attributes (UserResponse)
+ 
++ Response 401 (application/json)
+
+    + Attributes (Error)
+
+
+### Update [PUT]
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTg3MzUxNjc4LCJleHAiOjE1ODc5NTY0Nzh9.hD2vbgMNhMdci8ZdPEFzHm9g_xyUuwndGZpbWmSr568
+
+    + Attributes (UserUpdate)
+
++ Response 200 (application/json)
+
+    + Attributes (UserIndex)
+ 
++ Response 401 (application/json)
+
+    + Attributes (Error)
+    
+## Delete User [/users/{id}]
+
+### Delete [DELETE]
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTg3MzUxNjc4LCJleHAiOjE1ODc5NTY0Nzh9.hD2vbgMNhMdci8ZdPEFzHm9g_xyUuwndGZpbWmSr568
+
++ Response 200 (application/json)
+
+    + Attributes (UserIndex)
+ 
++ Response 401 (application/json)
+
+    + Attributes (Error)
+
+# Group Tools
+
+## List [/tools{?tag}]
+
+### List [GET]
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTg3MzUxNjc4LCJleHAiOjE1ODc5NTY0Nzh9.hD2vbgMNhMdci8ZdPEFzHm9g_xyUuwndGZpbWmSr568
+
++ Parameters
+
+    + tag: api (string, optional) - If tag not provided, list all tools.
+
++ Response 200 (application/json)
+
+    + Attributes(array[ToolResponse])
+
++ Response 401 (application/json)
+
+    + Attributes (Error)
+
+## Create [/tools]
+
+### Create [POST]
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTg3MzUxNjc4LCJleHAiOjE1ODc5NTY0Nzh9.hD2vbgMNhMdci8ZdPEFzHm9g_xyUuwndGZpbWmSr568
+
+    + Attributes(Tool)
+
++ Response 200 (application/json)
+
+    + Attributes(ToolResponse)
+    
++ Response 401 (application/json)
+
+    + Attributes (Error)
+
+## Delete [/tools/{id}]
+
+### Delete [DELETE]
++ Parameters
+
+    + id: 1 (number, required)
+
++ Request (application/json)
+
+    + Headers
+    
+            Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTg3MzUxNjc4LCJleHAiOjE1ODc5NTY0Nzh9.hD2vbgMNhMdci8ZdPEFzHm9g_xyUuwndGZpbWmSr568
+
++ Response 204 (application/json)
+    
++ Response 401 (application/json)
+
+    + Attributes (Error)
+
+# Data Structures
+## Error (object)
++ error: error message (string)
+
+## Session (object)
++ email: thiago.fdornelles@gmail.com (string)
++ password: 123456 (string)
+
+## SessionResponse (object)
++ id: 1 (number)
++ name: Thiago Dornelles (string)
++ email: thiago.fdornelles@gmail.com (string)
++ token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNTg3MzUxNjc4LCJleHAiOjE1ODc5NTY0Nzh9.hD2vbgMNhMdci8ZdPEFzHm9g_xyUuwndGZpbWmSr568 (string)
+
+## User (object)
++ name: Thiago Dornelles (string)
++ email: thiago.fdornelles@gmail.com (string)
++ password: 123456 (string)
+
+## UserUpdate (object)
++ name: Thiago Dornelles (string)
++ email: thiago.fdornelles@gmail.com (string)
++ oldPassword: 123456 (string)
++ password: 123123 (string)
++ confirmPassword: 123123 (string)
+
+## UserResponse (object)
++ id: 1 (number)
++ name: Thiago Dornelles (string)
++ email: thiago.fdornelles@gmail.com (string)
+
+## UserIndex (object)
++ id: 1 (number)
++ name: Thiago Dornelles (string)
++ email: thiago.fdornelles@gmail.com (string)
++ createdAt: 2020-04-04T03:00:14.005Z (date)
++ updatedAt: 2020-04-04T03:00:14.005Z (date)
+
+## Tool (object)
++ title: json-server (string)
++ link: https://github.com/typicode/json-server (string)
++ description: Fake REST API based on a json schema. (string)
++ tags: api (array[string])
+    
+## ToolResponse (object)
++ id: 1 (number) - Identificador da ferramenta
++ title: json-server (string)
++ link: https://github.com/typicode/json-server (string)
++ description: Fake REST API based on a json schema. (string)
++ tags: api (array[string])
++ user: user (UserResponse)
