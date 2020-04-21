@@ -8,6 +8,7 @@ import './config/ReactotronConfig';
 import Routes from './Routes';
 import history from './services/history';
 import store from './store';
+
 import GlobalStyle from './styles/global';
 
 export default function App() {
