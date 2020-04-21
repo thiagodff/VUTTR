@@ -35,6 +35,10 @@ This app features all the latest tools and practices development!
 
 ## Getting started
 
+You can test the frontend app using local storage: https://vuttr-bossabox.netlify.app/
+
+or run in your own computer:
+
 1. Clone this repo using `git clone https://github.com/thiagodff/VUTTR`
 2. Move yourself to the appropriate directory: `cd VUTTR/frontend`<br>
 3. Run `yarn` to install dependencies<br />

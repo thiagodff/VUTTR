@@ -11,6 +11,10 @@ VUTTR
   </a>
 </p>
 
+## Deploy
+
+https://vuttr-api-bossabox.herokuapp.com/
+
 ## Features
 
 This app features all the latest tools and practices development!
@@ -29,6 +33,10 @@ This app features all the latest tools and practices development!
 - [API Blueprint](https://apiblueprint.org/)
 
 ## Getting started
+
+You can use the api: https://vuttr-api-bossabox.herokuapp.com/
+
+or run on your own computer:
 
 1. Clone this repo using `git clone https://github.com/thiagodff/VUTTR`
 2. Move yourself to the appropriate directory: `cd VUTTR/backend`<br>

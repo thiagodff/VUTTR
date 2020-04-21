@@ -30,7 +30,7 @@ This app features all the latest tools and practices in development!
 1. Clone this repo using `git clone https://github.com/thiagodff/VUTTR`
 2. Move yourself to the appropriate directory: `cd VUTTR`<br />
 
-### Getting started with the [backend server](https://vuttr-api-bossabox.herokuapp.com/)
+### Getting started with the [backend server](https://github.com/thiagodff/VUTTR/tree/master/backend)
 
 1. Move yourself to the backend folder: `cd backend`<br />
 2. Copy the .env.example `cp .env.example .env`<br>
@@ -47,9 +47,9 @@ This app features all the latest tools and practices in development!
 
 Detailed documentation see [api.apib](https://github.com/thiagodff/VUTTR/blob/master/.github/api.apib) file.
 
-To see a user friendly version use [html](https://htmlpreview.github.io/?https://github.com/thiagodff/VUTTR/blob/master/.github/api.html) version
+To see a user friendly version use [html](https://htmlpreview.github.io/?https://github.com/thiagodff/VUTTR/blob/master/.github/api.html) version.
 
-### Getting started with the [frontend app](https://vuttr-bossabox.netlify.app/)
+### Getting started with the [frontend app](https://github.com/thiagodff/VUTTR/tree/master/frontend)
 
 1. Move yourself to the frontend folder: `cd frontend`<br />
 2. Run `yarn` to install dependencies<br />
