@@ -15,6 +15,7 @@ VUTTR
 
 This app features all the latest tools and practices development!
 
+- [TypeScript](https://www.typescriptlang.org/)
 - [Node.js](https://nodejs.org/)
 - [Express](https://expressjs.com/)
 - [Docker](https://www.docker.com/docker-community)
@@ -38,6 +39,8 @@ This app features all the latest tools and practices development!
 ## Routes
 
 ### Insomnia
+
+[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=API%20VUTTR&uri=https%3A%2F%2Fraw.githubusercontent.com%2Fthiagodff%2FVUTTR%2Fmaster%2F.github%2Fvuttr_insomnia.json)
 
 ### API Blueprint
 
