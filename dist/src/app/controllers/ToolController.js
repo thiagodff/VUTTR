@@ -54,7 +54,7 @@ exports.default = {
                     case 0:
                         tag = req.query.tag;
                         userId = req.userId;
-                        if (!tag) return [3 /*break*/, 2];
+                        if (!(typeof tag === 'string')) return [3 /*break*/, 2];
                         return [4 /*yield*/, ListSearchToolsService_1.default.run({ tag: tag, userId: userId })];
                     case 1:
                         tools = _a.sent();

@@ -15,7 +15,7 @@ export default {
 
     let tools;
 
-    if (tag) {
+    if (typeof tag === 'string') {
       tools = await ListSearchTools.run({ tag, userId });
     } else {
       tools = await ListTools.run({ userId });
