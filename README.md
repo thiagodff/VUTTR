@@ -1,4 +1,4 @@
-# Bossabox challenge <3
+# Bossabox challenge
 
 ## Awesome Project Build with TypeORM
 
