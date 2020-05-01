@@ -34,14 +34,18 @@ const AddNewTool: React.FC<Props> = ({ handleClick }) => {
     const parseTools = JSON.parse(tools);
 
     const tool = {
-      id: parseTools.length,
+      id: parseTools?.length || 0,
       title,
       link,
       description,
       tags,
     };
 
-    localStorage.setItem('tools', JSON.stringify([...parseTools, tool]));
+    if (parseTools) {
+      localStorage.setItem('tools', JSON.stringify([...parseTools, tool]));
+    } else {
+      localStorage.setItem('tools', JSON.stringify([tool]));
+    }
 
     dispatch(toolsRequest(''));
     handleClick();
